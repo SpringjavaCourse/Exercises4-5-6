@@ -47,10 +47,15 @@ public class LaptopController {
 
     // Creamos laptop
     @PostMapping("/api/Laptops")
-    public Laptop create(@RequestBody Laptop laptop){
+    public ResponseEntity<Laptop> create(@RequestBody Laptop laptop){
 
-        return laptopRepository.save(laptop);
+        if(laptop.getId() != null){ // verificamos si existe
+            System.out.println("trying to create a Laptop with id");
+            return ResponseEntity.badRequest().build();
+        }
 
+        Laptop result =  laptopRepository.save(laptop);
+        return  ResponseEntity.ok(result);
     }
 
 }
