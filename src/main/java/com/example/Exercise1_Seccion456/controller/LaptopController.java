@@ -78,6 +78,11 @@ public class LaptopController {
     }
 
 
+    /**
+     * Elimina una Laptop por Id
+     * @param id
+     * @return ResponseEntity<Laptop>
+     */
     @DeleteMapping("/api/Laptops/{id}")
     public ResponseEntity<Laptop> delete(@PathVariable Long id){
 
