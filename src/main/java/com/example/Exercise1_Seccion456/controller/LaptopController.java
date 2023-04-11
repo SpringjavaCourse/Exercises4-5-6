@@ -58,4 +58,19 @@ public class LaptopController {
         return  ResponseEntity.ok(result);
     }
 
+    @PutMapping("/api/Laptops")
+    public ResponseEntity<Laptop> update(@RequestBody Laptop laptop){
+
+        if(laptop.getId() == null){// verificar id
+            return ResponseEntity.badRequest().build();
+        }
+        if(!laptopRepository.existsById(laptop.getId())){ // No se encuentra
+            return ResponseEntity.notFound().build();
+        }
+
+        Laptop result = laptopRepository.save(laptop);
+        return ResponseEntity.ok(result);
+
+    }
+
 }
