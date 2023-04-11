@@ -58,6 +58,11 @@ public class LaptopController {
         return  ResponseEntity.ok(result);
     }
 
+    /**
+     * Actualiza los valores modificados de una laptop en especifica
+     * @param laptop
+     * @return ResponseEntity<Laptop>
+     */
     @PutMapping("/api/Laptops")
     public ResponseEntity<Laptop> update(@RequestBody Laptop laptop){
 
@@ -70,7 +75,18 @@ public class LaptopController {
 
         Laptop result = laptopRepository.save(laptop);
         return ResponseEntity.ok(result);
+    }
 
+
+    @DeleteMapping("/api/Laptops/{id}")
+    public ResponseEntity<Laptop> delete(@PathVariable Long id){
+
+        if(!laptopRepository.existsById(id)){
+            return ResponseEntity.notFound().build();
+        }
+
+        laptopRepository.deleteById(id);
+        return  ResponseEntity.noContent().build();
     }
 
 }
