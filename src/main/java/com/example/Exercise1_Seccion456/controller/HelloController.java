@@ -10,6 +10,4 @@ public class HelloController {
     public String saludo(){
         return "Hola mundo, como estan?...";
     }
-
-
 }
