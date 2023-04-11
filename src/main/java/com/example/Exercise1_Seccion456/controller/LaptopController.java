@@ -95,6 +95,8 @@ public class LaptopController {
     }
 
 
+
+
     @DeleteMapping("/api/Laptops")
     public ResponseEntity<Laptop> deleteAll(){
 
