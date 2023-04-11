@@ -94,4 +94,12 @@ public class LaptopController {
         return  ResponseEntity.noContent().build();
     }
 
+
+    @DeleteMapping("/api/Laptops")
+    public ResponseEntity<Laptop> deleteAll(){
+
+        laptopRepository.deleteAll();
+        return ResponseEntity.noContent().build();
+    }
+
 }
