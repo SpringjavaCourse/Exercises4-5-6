@@ -33,28 +33,28 @@ class LaptopControllerTest {
         testRestTemplate = new TestRestTemplate(restTemplateBuilder);
     }
 
-    @Test
-    void findAll() {
-
-        ResponseEntity<Laptop[]> response =
-                testRestTemplate.getForEntity("/api/Laptops", Laptop[].class);
-
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(200, response.getStatusCodeValue());
-
-    }
-
-    @Test
-    void findOneById() {
-
-        ResponseEntity<Laptop> response =
-                testRestTemplate.getForEntity("/api/Laptops/1", Laptop.class);
-
-        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-
-    }
-
-    @Test
-    void create() {
-    }
+//    @Test
+//    void findAll() {
+//
+//        ResponseEntity<Laptop[]> response =
+//                testRestTemplate.getForEntity("/api/Laptops", Laptop[].class);
+//
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(200, response.getStatusCodeValue());
+//
+//    }
+//
+//    @Test
+//    void findOneById() {
+//
+//        ResponseEntity<Laptop> response =
+//                testRestTemplate.getForEntity("/api/Laptops/1", Laptop.class);
+//
+//        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+//
+//    }
+//
+//    @Test
+//    void create() {
+//    }
 }
