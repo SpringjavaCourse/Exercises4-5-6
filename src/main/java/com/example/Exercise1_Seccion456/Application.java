@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+
 @SpringBootApplication
 public class Application {
 
@@ -21,7 +22,6 @@ public class Application {
 		repository.save(laptop1);
 		repository.save(laptop2);
 		repository.save(laptop3);
-
 
 	}
 
